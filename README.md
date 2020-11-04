@@ -22,13 +22,15 @@ Project has two directories named `dags` and `plugins`. A create tables script a
 - `create_tables.sql`: SQL create table statements provided with template.
 
 `dags` directory contains:
-- `sparkify_etl_dag.py`: Defines main DAG, tasks and link the tasks in required order.
+- `sparkify_dend_dag.py`: Defines main DAG, tasks and link the tasks in required order.
 
 `plugins/operators` directory contains:
 - `stage_redshift.py`: Defines `StageToRedshiftOperator` to copy JSON data from S3 to staging tables in the Redshift via `copy` command.
 - `load_dimension.py`: Defines `LoadDimensionOperator` to load a dimension table from staging table(s).
 - `load_fact.py`: Defines `LoadFactOperator` to load fact table from staging table(s).
 - `data_quality.py`: Defines `DataQualityOperator` to run data quality checks on all tables passed as parameter.
+
+`plugins/helpers` directory contains:
 - `sql_queries.py`: Contains SQL queries for the ETL pipeline (provided in template).
 
 ## Config
