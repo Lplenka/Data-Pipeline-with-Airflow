@@ -33,6 +33,9 @@ Project has two directories named `dags` and `plugins`. A create tables script a
 `plugins/helpers` directory contains:
 - `sql_queries.py`: Contains SQL queries for the ETL pipeline (provided in template).
 
+## Dag Structure
+- The task dependencies should generate the following graph view:
+![Fig 1: Dag with correct task dependencies](final_dag.png)
 ## Config
 
 This code uses `python 3` and assumes that Apache Airflow is installed and configured.
